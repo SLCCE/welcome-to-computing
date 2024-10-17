@@ -6,5 +6,6 @@ Our mission is to encourage high-school students from under-represented backgrou
 
 ## Contact
 Should you have any questions regarding the contents of this workshop, please contact the CSC Committee at slcce.ncsu.csc@gmail.com.
-##
-Thank you for starting **Workshop 1: Welcome to Computing**. Let's get started!
+
+
+Thank you for choosing SLCCE. Let's get started on **Workshop 1: Welcome to Computing**!
