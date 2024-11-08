@@ -55,7 +55,7 @@ favNumber = input("What is your favorite number? ")
 favCollege = input("What is your favorite college or university? ")
 
 # Print message
-print("My favorite College is", favCollege, "and my favorite number is", favNumber,)
+print("My favorite College is", favCollege, "and my favorite number is", favNumber!)
 ```
 
 This gives us a basic program that asks for information and prints it back to the user\!
