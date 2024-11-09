@@ -1,10 +1,10 @@
 # for all of the problems below, predict what value will be printed out
 
 # problem 1
-print(type("SLCCE is awesome!")
+print(type("SLCCE is awesome!"))
 
 # problem 2
-print(type("name")
+print(type("name"))
 
 # problem 3
 print(type(97))
