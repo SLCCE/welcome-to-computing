@@ -3,7 +3,7 @@ print() is a function that outputs the variable, string, or other object inside 
 
 ```py
 print('Hello World!')
->>>Hello World
+>>> Hello World
 ```
 
 A function takes an input in the parentheses and does an action with it. In our case, print() displays “Hello World\!” in the terminal.
@@ -15,7 +15,7 @@ print() can output multiple objects with commas separating them.
 ```py
 #Outputs 1 is the first number
 print(1, "is the first number")
->>>1 is the first number
+>>> 1 is the first number
 ```
 
 Commenting is another useful tool in coding.You put \# and then whatever you want to say. 
