@@ -13,7 +13,7 @@ public class Java {
     System.out.print("What is your favorite number? ");
     int favNumber = in.nextInt();
 
-    // Print "Hello, World!" message
+    // Print message adding context to these variables
     System.out.println("Hello world! My favorite animal is " + animal + "! My favorite number is " + favNumber + "!");
   }    
 }
