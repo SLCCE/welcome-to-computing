@@ -46,6 +46,7 @@ In Java, you can use `//` to denote a comment. In addition to single-line commen
    mark the
    beginning
    and end of
-   these comments. */
+   these comments.
+*/
 ```
 
