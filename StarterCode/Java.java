@@ -11,7 +11,7 @@ public class Java {
     System.out.print(?);
     ? favNumber = ?;
 
-    // Print message adding context to these variables (Replace the question mark below)
+    // Print message adding context to these variables (Replace the question mark below with your function)
     ?
   }
 }
