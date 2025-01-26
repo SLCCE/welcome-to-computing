@@ -37,16 +37,17 @@ In Java, you can use `//` to denote a comment. In addition to single-line commen
 ```
 
 ```java
-/* This is a
-   multiline
-   comment.
-   Notice
-   the symbols
-   we use to
-   mark the
-   beginning
-   and end of
-   these comments.
+/*
+  This is a
+  multiline
+  comment.
+  Notice
+  the symbols
+  we use to
+  mark the
+  beginning
+  and end of
+  these comments.
 */
 ```
 
