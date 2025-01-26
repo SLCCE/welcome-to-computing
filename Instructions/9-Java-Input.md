@@ -39,7 +39,6 @@ double userInput = in.nextDouble();
 In this case, we are asking for the user's favorite color. The full code to get this user input is below.
 
 ```java
-Scanner in = new Scanner(System.in);
 System.out.print("What is your favorite color? ");
 String favColor = in.next();
 ```
@@ -48,4 +47,10 @@ Finally, we might want to output this to the user. We can use `System.out.printl
 
 ```java
 System.out.println("Your favorite color is " + favColor);
+```
+
+We only need one Scanner to collect all of the user input we need. We can continue to use the same Scanner. Once we have finished using the Scanner, it is a good practice to close it:
+
+```java
+in.close();
 ```
