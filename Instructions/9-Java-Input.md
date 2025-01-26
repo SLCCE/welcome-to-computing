@@ -55,6 +55,6 @@ We only need one Scanner to collect all of the user input we need. We can contin
 in.close();
 ```
 
-**EXERCISE:** make a copy of the `Java.java` starter code. Read each comment and fill in the missing code below.
+**EXERCISE:** Make a copy of the `Java.java` starter code. Read each comment and fill in the missing code below.
 
 
