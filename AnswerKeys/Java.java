@@ -15,5 +15,8 @@ public class Java {
 
     // Print message adding context to these variables
     System.out.println("My favorite animal is " + animal + "! My favorite number is " + favNumber + "!");
+
+    // Close the Scanner
+    in.close();
   }    
 }
