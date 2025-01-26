@@ -1,3 +1,5 @@
+**Make a copy of the Python.py starter code. Fill out each section as you read this page.**
+
 A **variable** is like a container that holds a value. You can think of it as a label for something you want to store. For example, you might want to store a number or a word and use it later in your program.
 
 Let’s start with a variable that stores a number. In this case, we’re going to store the number 30 in a variable called favNumber. 
