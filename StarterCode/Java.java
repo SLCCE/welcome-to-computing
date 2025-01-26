@@ -13,5 +13,8 @@ public class Java {
 
     // Print message adding context to these variables (Replace the question mark below with your function)
     ?
+
+    // Close the Scanner (Replace the question mark below with your function)
+    ?
   }
 }
