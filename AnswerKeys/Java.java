@@ -14,7 +14,7 @@ public class Java {
     int favNumber = in.nextInt();
 
     // Print message adding context to these variables
-    System.out.println("My favorite animal is " + animal + "! My favorite number is " + favNumber + "!");
+    System.out.println("My favorite animal is " + favAnimal + "! My favorite number is " + favNumber + "!");
 
     // Close the Scanner
     in.close();
