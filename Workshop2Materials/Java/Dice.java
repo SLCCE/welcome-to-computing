@@ -1,3 +1,7 @@
+/*
+ * todos: comments
+ * exercise? -- could be separate object to make a toString for OR adding another attribute to the dice ex. color
+ */
 import java.util.Random;
 
 public class Dice {
