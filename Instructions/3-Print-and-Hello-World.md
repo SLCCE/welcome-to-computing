@@ -18,7 +18,7 @@ print(1, "is the first number")
 >>> 1 is the first number
 ```
 
-Commenting is another useful tool in coding.You put \# and then whatever you want to say. 
+Commenting is another useful tool in coding. You put \# and then whatever you want to say. 
 
 ```py
 #Like this!!!
