@@ -1,12 +1,8 @@
 y = 2
-def f(x):
-    print(x)
+def f():
+    global y
     print(y)
-    z = 3
-    print(z)
-
-f('hi')
-# print(x)
+    y += 2
+    
+f()
 print(y)
-# print(z)
-print("\n\n\n")
