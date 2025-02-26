@@ -7,7 +7,7 @@ public class PrimitiveTypes {
   public static void main(String[] args) {
     int number = 3;
     double decimal = 4.6;
-    character ch = 'E';
+    char ch = 'E';
     boolean b = true;
   }
 }
