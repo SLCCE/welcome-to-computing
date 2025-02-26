@@ -6,7 +6,7 @@ The object we'll use to accept user input is called a **Scanner**. A Scanner can
 Scanner in = new Scanner(System.in);
 ```
 
-Notice how we use the `new` keyboard to create a new **instance** of a Scanner. For most Objects, you will need to use this keyboard when defining a new copy of that Object. In the previous section, you saw that Strings were an exception to this rule, but it turns out the below two lines of code are identical:
+Notice how we use the `new` keyboard to create a new **instance** of a Scanner. For most Objects, you will need to use this keyword when defining a new copy of that Object. In the previous section, you saw that Strings were an exception to this rule, but it turns out the below two lines of code are identical:
 
 ```java
 String s1 = "Test";
