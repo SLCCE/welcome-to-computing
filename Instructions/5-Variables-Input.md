@@ -76,7 +76,7 @@ Let's enter *3* as our first number and *2* as the second. We probably want to g
 >>> 32
 ```
 
-When you add two strings together, the result is the first string, followed by the second. Recall from the previous section that we can convert (or **cast**) the contents of a variable from one type to another. Let's cast firstNumber and secondNumber, then see what happens:
+When you add two strings together, the result is the first string, followed by the second. Recall from the previous section that we can convert (or **cast**) the contents of a variable from one type to another. Let's cast firstNumber and secondNumber to an integer, then see what happens:
 
 ```py
 # Get two numbers
