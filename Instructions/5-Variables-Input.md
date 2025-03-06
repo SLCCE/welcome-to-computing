@@ -1,6 +1,8 @@
+# Variables
+
 A **variable** is like a container that holds a value. You can think of it as a label for something you want to store. For example, you might want to store a number or a word and use it later in your program.
 
-Let’s start with a variable that stores a number. In this case, we’re going to store the number 30 in a variable called favNumber. 
+Let’s start with a variable that stores a number. In this case, we’re going to store the number 30 in a variable called favNumber.
 
 We do this with:
 
@@ -41,7 +43,7 @@ favCollege = input("What is your favorite college or university? ")
 print(“Your favorite college is”, favCollege)
 ```
 
-Let's say the user inputs “Harvard”. 
+Let's say the user inputs “Harvard”.
 
 Just like before, this will ask the question and store the answer (Harvard) in the variable favCollege. This time however, we give context to the message. The output will be “Your favorite college is Harvard”
 

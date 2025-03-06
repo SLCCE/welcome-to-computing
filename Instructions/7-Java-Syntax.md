@@ -1,3 +1,5 @@
+# Java Syntax
+
 The syntax of Java is a bit different from Python. Consider the following Java code:
 
 ```java
@@ -50,4 +52,3 @@ In Java, you can use `//` to denote a comment. In addition to single-line commen
   these comments.
 */
 ```
-

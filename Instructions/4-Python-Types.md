@@ -1,4 +1,6 @@
-The data we use in coding have classifications. These are called types. The three main types we’ll be learning are ints, strings, and floats. 
+# Python Types
+
+The data we use in coding have classifications. These are called types. The three main types we’ll be learning are ints, strings, and floats.
 
 A string, or str is a combination of characters. Strings are differentiated by quotes. They can be either single quotes or double quotes.  
 For example:
@@ -53,4 +55,3 @@ int(4.0)
 float('5.673')
 >>> 5.673
 ```
-

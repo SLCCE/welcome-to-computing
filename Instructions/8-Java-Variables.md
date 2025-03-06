@@ -1,3 +1,5 @@
+# Java Variables
+
 Like Python, Java can also use **variables** to store data. Unlike Python, which is a dynamically-typed language, Java is statically-typed, meaning that you must tell Java what kind of variable you are using.
 
 **Primitive** types are simpler, representing types predefined by Java. Primitives start with a lowercase letter. The code below shows examples of several different primitive types that we will be using throughout our workshops:
@@ -23,7 +25,6 @@ public class ObjectType {
 }
 ```
 
-
 Java provides several options to print out a line of text. We'll focus on two of them.
 
 ```java
@@ -44,5 +45,3 @@ System.out.println("Two");
 System.out.println("One");
 System.out.println("Two");
 ```
-
-

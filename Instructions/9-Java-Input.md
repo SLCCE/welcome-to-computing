@@ -1,3 +1,5 @@
+# Java Input
+
 It is a more complex task to accept user input in Java.
 
 The object we'll use to accept user input is called a **Scanner**. A Scanner can be created using the following line of code:
@@ -31,7 +33,8 @@ If we want to accept the next integer, we'll use this line:
 int userInput = in.nextInt();
 ```
 
-If we want to accept the next decimal number, we'll use this line:
+If we want to accept the next decimal number, we'll use this line:\
+
 ```java
 double userInput = in.nextDouble();
 ```
@@ -56,5 +59,3 @@ in.close();
 ```
 
 **EXERCISE:** Make a copy of the `Java.java` starter code. Read each comment and fill in the missing code below.
-
-

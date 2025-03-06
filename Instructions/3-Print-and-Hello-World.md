@@ -1,5 +1,6 @@
-  
-print() is a function that outputs the variable, string, or other object inside the function. 
+# Print and Hello World
+
+print() is a function that outputs the variable, string, or other object inside the function.
 
 ```py
 print('Hello World!')
@@ -18,11 +19,10 @@ print(1, "is the first number")
 >>> 1 is the first number
 ```
 
-Commenting is another useful tool in coding. You put \# and then whatever you want to say. 
+Commenting is another useful tool in coding. You put \# and then whatever you want to say.
 
 ```py
 #Like this!!!
 ```
 
-The computer sees the \# and knows not to read it. This allows you to add notes for other programmers to read when they look at your code or for yourself to remember what your code is doing. 
-
+The computer sees the \# and knows not to read it. This allows you to add notes for other programmers to read when they look at your code or for yourself to remember what your code is doing.
