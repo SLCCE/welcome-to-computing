@@ -12,7 +12,7 @@ public class JavaSyntaxExercise {
 
     
     // Problem 3
-    // In the space below, include a comment of your choice stating what must be at the end of every statementin Java.
+    // In the space below, include a comment of your choice stating what must be at the end of every statement in Java.
 
     
 

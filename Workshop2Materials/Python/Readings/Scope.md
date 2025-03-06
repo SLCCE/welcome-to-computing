@@ -1,7 +1,6 @@
-A variable's scope is based on where it is declared and determines where it can be accessed. 
+# Python Scope
 
-The first scope we'll take a look at is global.
-A variable has global scope if it's declared on the top level and can be accessed anywhere. 
+A variable's scope is based on where it is declared and determines where it can be accessed. The first scope we'll take a look at is global. A variable has global scope if it's declared on the top level and can be accessed anywhere.
 
 ```python
 x = 5
@@ -12,7 +11,7 @@ f()
 # The above will print out 5
 ```
 
-The other scope is local scope. 
+The other scope is local scope.
 
 ```python
 def f():
@@ -42,9 +41,9 @@ print(y) -- prints 2
 # Note: If we passed y into the function, ex. f(y), we could still print out y at the end because it has global scope. 
 ```
 
-Since y is an integer and integers are immutable, if we wanted to modify y within the function, we'd need the global keyword. However, if y was a mutable object like a list, we would not need the global keyword. 
+Since y is an integer and integers are immutable, if we wanted to modify y within the function, we'd need the global keyword. However, if y was a mutable object like a list, we would not need the global keyword.
 
-Immutable: not able to be changed -- when we 'change' an immutable object, the program is actually replacing the instance of that object with separate one. 
+Immutable: not able to be changed -- when we 'change' an immutable object, the program is actually replacing the instance of that object with separate one.
 
 ```python
 y = 2
@@ -57,7 +56,7 @@ f()
 print(y) # prints 4
 ```
 
-Example with mutable object: list. 
+Example with mutable object: list.
 
 ```python
 a = [1, 2, 3, 4, 5]
@@ -67,8 +66,8 @@ def f():
 print(a) # [2, 2, 3, 4, 5]
 ```
 
-Something to note is if two variables of different scopes have the same name, 
-getting the variable will access the one with the narrower scope
+Something to note is if two variables of different scopes have the same name, getting the variable will access the one with the narrower scope
+
 ```python
 x = 2
 def f(x):
@@ -76,4 +75,3 @@ def f(x):
 f('hi')
 print(x) # prints 2, our global variable
 ```
-
