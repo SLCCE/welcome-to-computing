@@ -13,7 +13,7 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "pip3 install --user -r requirements.txt",
-	"postCreateCommand": "pip install --upgrade pip && pip install --user -r util/constraints.txt && chmod +x util/extensions.sh && ./util/extensions.sh",
+	"postCreateCommand": "pip install --upgrade pip && pip install --user -r util/constraints.txt && chmod +x ./util/extensions.sh && ./util/extensions.sh",
 
 	// Configure tool-specific properties.
 	// "customizations": {},
