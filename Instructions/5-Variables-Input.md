@@ -43,9 +43,9 @@ favCollege = input("What is your favorite college or university? ")
 print(“Your favorite college is”, favCollege)
 ```
 
-Let's say the user inputs “Harvard”.
+Let's say the user inputs “NC State”.
 
-Just like before, this will ask the question and store the answer (Harvard) in the variable favCollege. This time however, we give context to the message. The output will be “Your favorite college is Harvard”
+Just like before, this will ask the question and store the answer (NC State) in the variable favCollege. This time however, we give context to the message. The output will be “Your favorite college is NC State”
 
 We can of course combine our questions and print a final response containing both answers and their context.
 
