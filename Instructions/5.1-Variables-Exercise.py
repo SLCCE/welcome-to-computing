@@ -29,7 +29,7 @@ print("Hi, ", name)
 # Example 3
 # You can print as many things as you want in one print statement-- like the example below.
 school = "NC State"
-mascot = "Wolfpack"
+mascot = "Wolf"
 sport = "football"
 students = 40000
 

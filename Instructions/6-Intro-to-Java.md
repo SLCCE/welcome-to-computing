@@ -10,7 +10,7 @@ Java is a popular programming language that is commonly used in industry and by 
 
 The five principles of Java are:
 
-- **Simple, object-oriented, and familiar**: Java should be easy to use, with intuitive naming conventions and similar flow to other programming langauges
+- **Simple, object-oriented, and familiar**: Java should be easy to use, with intuitive naming conventions and similar flow to other programming languages.
 - **Robust and secure**: Java should be easy to understand and limit security vulnerabilities
 - **Architecture-neutral and portable**: one of the things that makes Java so popular is that it is portable, meaning it can be transported from device to device
 - **It must execute with high performance**: Java should run quickly and without hitting major errors
