@@ -24,6 +24,22 @@ In short, all code in Java must be contained within a **class**. Here, the class
 
 Recall that the end of a line marked the end of a code **statement** in Java. As shown in the "Hello world!" example above, in Java, all **statements** must end in a semicolon (;). Thus, it is possible to write multiple statements of code on the same line, so long as each statement ends with a semicolon. In practice, however, programmers like to keep their code readable, so they will keep to one statement per line.
 
+Here's what a function looks like:
+```java
+public int addTwoNumbers(int x, int y) {
+  return x + y;
+}
+// prints out 5
+System.out.println(addTwoNumbers(2, 3));
+```
+From the function header, we can see that it has public visibility, returns an integer, is called 'addTwoNumbers,' and takes two integer parameters, x and y. As for the function body, it returns the sum of the two numbers. 
+
+Java has static typing, so the type of the variable needs to be declared. 
+```java
+int x = 1
+double y = 2.3
+```
+
 In Java, you can use `//` to denote a comment. In addition to single-line comments, Java also includes multi-line comments, as shown in the examples below. Java will ignore all text contained within a comment, so you do not need to end each line of comments with a semicolon.
 
 ```java

@@ -15,6 +15,21 @@ public class PrimitiveTypes {
 }
 ```
 
+To print out primitive types, we can pass them into print or println:
+```java
+int number = 3;
+char ch = 'E';
+System.out.println(number);
+System.out.println(ch);
+```
+
+On that note, we can also print text and variables together:
+```java
+boolean b = true;
+System.out.println("The value of b is: " + b);
+// prints The value of b is: true
+```
+
 **Objects** are more complex. Objects start with a capital letter. They are the result of combining primitive types and other Objects together. The first Object type we will discuss is a String. What type(s) do you think are added together to make a String?
 
 ```java
