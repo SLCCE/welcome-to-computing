@@ -2,7 +2,7 @@
 
 # Launch token: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/SLCCE/welcome-to-computing/HEAD?urlpath=%2Fdoc%2Ftree%2FInstructions%2F2-Intro-to-Python.ipynb)
 
-This workshop goes through the basics of Python syntax, running code, and user interaction. You can get started by creating a [codespace](https://docs.github.com/en/codespaces/quickstart#introduction), and following the directions in the instructions folder.
+This workshop goes through the basics of Python syntax, running code, and user interaction. You can get started by using the above [launch token](https://mybinder.org/v2/gh/SLCCE/welcome-to-computing/HEAD?urlpath=%2Fdoc%2Ftree%2FInstructions%2F2-Intro-to-Python.ipynb) or creating a [codespace](https://docs.github.com/en/codespaces/quickstart#introduction) and following the directions in the instructions folder.
 
 ## Who is SLCCE?
 
