@@ -31,6 +31,12 @@ def _code() -> str:
     global _session_code
     if _session_code is None:
         _session_code = input("Enter the session code: ").strip()
+        # Echoed back as a real printed line, not just input()'s own
+        # transient prompt -- this becomes part of the cell's saved
+        # output, so a student can scroll up and check it later (or
+        # after a kernel restart, before this cache resets) without
+        # needing to remember it or ask again.
+        print(f"Using session code: {_session_code}")
     return _session_code
 
 
