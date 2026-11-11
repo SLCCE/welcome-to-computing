@@ -103,7 +103,15 @@ class submit:
                 f'<div style="color:{color};font-family:monospace">{shown}{marker}</div>'
             )
 
-        verdict = "Correct!" if result["pass"] else "Not quite -- check the lines marked wrong."
+        if result["already_secured"]:
+            # Passed on an earlier attempt this round -- that's locked
+            # in regardless of what this particular resubmission looks
+            # like, so this must never read as a "wrong" verdict.
+            verdict = "Already correct from an earlier attempt -- you're safe regardless of this one."
+        elif result["pass"]:
+            verdict = "Correct!"
+        else:
+            verdict = "Not quite -- check the lines marked wrong."
         display(
             HTML(
                 f'<div>{"".join(rows)}</div>'
