@@ -167,14 +167,49 @@ class submit:
         else:
             verdict = "Not quite -- check the lines marked wrong."
 
-        win_banner = (
-            '<p style="font-size:24px"><b>You win!</b></p>' if result["game_won"] else ""
-        )
         display(
             HTML(
                 f'<div>{"".join(rows)}</div>'
                 f'<p><b>{verdict}</b> Lives remaining: {result["lives_remaining"]}</p>'
-                f"{win_banner}"
             )
         )
         return True
+
+
+def display_score() -> None:
+    """
+    Run this once at the very end, after your instructor says the game
+    is over -- NOT tied to whether your last submission happened to be
+    correct or for the last level specifically. Checks the real
+    end-of-game state on the server (has the final round actually
+    resolved, do you still have lives left), so a wrong final attempt
+    can't hide a win you already earned by surviving earlier rounds.
+    """
+    try:
+        resp = requests.get(
+            f"{BASE_URL}/sessions/{_code()}/game/score",
+            params={"hub_username": _hub_username()},
+        )
+    except requests.RequestException:
+        print("Couldn't reach the game server -- check with your instructor.")
+        return
+    if not resp.ok:
+        print(_handle_error(resp))
+        return
+    result = resp.json()
+
+    if not result["game_over"]:
+        print("The game isn't over yet -- wait for the instructor to finish the last round.")
+        return
+
+    if result["won"]:
+        display(
+            HTML(
+                '<p style="font-size:24px"><b>You win!</b></p>'
+                f'<p>Lives remaining: {result["lives_remaining"]}</p>'
+            )
+        )
+    else:
+        display(
+            HTML(f'<p><b>Game over</b> -- eliminated at level {result["eliminated_at_level"]}.</p>')
+        )
