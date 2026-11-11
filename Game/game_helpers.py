@@ -153,8 +153,12 @@ class submit:
             color = "#0EA5A0" if line["correct"] else "#D1483F"
             marker = "" if line["correct"] else "  &lt;-- wrong"
             shown = line["actual"] if line["actual"] is not None else "(nothing printed)"
+            # white-space:pre is load-bearing, not cosmetic -- plain
+            # HTML collapses runs of spaces (and strips leading ones)
+            # by default, so a line's actual indentation would render
+            # identically to having none at all without this.
             rows.append(
-                f'<div style="color:{color};font-family:monospace">{shown}{marker}</div>'
+                f'<div style="color:{color};font-family:monospace;white-space:pre">{shown}{marker}</div>'
             )
 
         if result["already_secured"]:
