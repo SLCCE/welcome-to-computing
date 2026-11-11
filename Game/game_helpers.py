@@ -48,13 +48,26 @@ def _hub_username() -> str:
     return os.environ["JUPYTERHUB_USER"]
 
 
+def _error_detail(resp: "requests.Response") -> str:
+    try:
+        return resp.json().get("detail", "Something went wrong.")
+    except ValueError:
+        return "Something went wrong talking to the game server."
+
+
 def show_round() -> None:
     """Run this once per round to reveal the current level's image."""
-    resp = requests.get(f"{BASE_URL}/sessions/{_code()}/round/current/image")
-    if resp.status_code == 404:
-        print("Round hasn't started yet -- wait for the instructor, then run this again.")
+    try:
+        resp = requests.get(f"{BASE_URL}/sessions/{_code()}/round/current/image")
+    except requests.RequestException:
+        print("Couldn't reach the game server -- check with your instructor.")
         return
-    resp.raise_for_status()
+    if not resp.ok:
+        # Uses the server's own message rather than a single hardcoded
+        # guess -- "no round active yet" and "session not found" (e.g.
+        # a mistyped code) are both 404s, and need different advice.
+        print(_error_detail(resp))
+        return
     display(Image(resp.content))
 
 
@@ -93,11 +106,20 @@ class submit:
         if lines and lines[-1] == "":
             lines.pop()
 
-        resp = requests.post(
-            f"{BASE_URL}/sessions/{_code()}/submit",
-            json={"hub_username": _hub_username(), "level_number": self.level, "lines": lines},
-        )
-        resp.raise_for_status()
+        try:
+            resp = requests.post(
+                f"{BASE_URL}/sessions/{_code()}/submit",
+                json={"hub_username": _hub_username(), "level_number": self.level, "lines": lines},
+            )
+        except requests.RequestException:
+            print("Couldn't reach the game server -- check with your instructor.")
+            return True
+        if not resp.ok:
+            # E.g. submitting before the instructor's actually started
+            # this round -- a real, likely mistake, not worth a raw
+            # traceback over.
+            print(_error_detail(resp))
+            return True
         result = resp.json()
 
         rows = []
@@ -118,10 +140,15 @@ class submit:
             verdict = "Correct!"
         else:
             verdict = "Not quite -- check the lines marked wrong."
+
+        win_banner = (
+            '<p style="font-size:24px"><b>You win!</b></p>' if result["game_won"] else ""
+        )
         display(
             HTML(
                 f'<div>{"".join(rows)}</div>'
                 f'<p><b>{verdict}</b> Lives remaining: {result["lives_remaining"]}</p>'
+                f"{win_banner}"
             )
         )
         return True
