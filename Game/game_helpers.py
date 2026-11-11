@@ -40,6 +40,17 @@ def _code() -> str:
     return _session_code
 
 
+def enter_code() -> None:
+    """
+    Run this first, before anything else -- enter the session code
+    your instructor gives you. Separate, explicit step (rather than
+    leaving this as a side effect of the first show_round()/submit()
+    call) so it's an obvious, documented part of getting started, not
+    something that only incidentally happens.
+    """
+    _code()
+
+
 def _hub_username() -> str:
     # Set by JupyterHub itself in every spawned server's environment --
     # the student never types or sees this, it's just how the system
@@ -48,11 +59,26 @@ def _hub_username() -> str:
     return os.environ["JUPYTERHUB_USER"]
 
 
-def _error_detail(resp: "requests.Response") -> str:
+def _handle_error(resp: "requests.Response") -> str:
+    """
+    Returns a human-readable message for a failed request. Also resets
+    the cached session code specifically when the failure means "that
+    code doesn't correspond to any active session" -- every OTHER 404
+    here (e.g. "no round active yet") is NOT a code problem and must
+    NOT reset it, or a student would get re-prompted every single time
+    they check before the instructor's actually started a round.
+    """
+    global _session_code
     try:
-        return resp.json().get("detail", "Something went wrong.")
+        detail = resp.json().get("detail", "Something went wrong.")
     except ValueError:
         return "Something went wrong talking to the game server."
+
+    if isinstance(detail, dict):
+        if detail.get("error") == "session_not_found":
+            _session_code = None
+        return detail.get("message", "Something went wrong.")
+    return detail
 
 
 def show_round() -> None:
@@ -66,7 +92,7 @@ def show_round() -> None:
         # Uses the server's own message rather than a single hardcoded
         # guess -- "no round active yet" and "session not found" (e.g.
         # a mistyped code) are both 404s, and need different advice.
-        print(_error_detail(resp))
+        print(_handle_error(resp))
         return
     display(Image(resp.content))
 
@@ -118,7 +144,7 @@ class submit:
             # E.g. submitting before the instructor's actually started
             # this round -- a real, likely mistake, not worth a raw
             # traceback over.
-            print(_error_detail(resp))
+            print(_handle_error(resp))
             return True
         result = resp.json()
 
