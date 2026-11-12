@@ -30,7 +30,17 @@ _session_code: str | None = None
 def _code() -> str:
     global _session_code
     if _session_code is None:
-        _session_code = input("Enter the session code: ").strip()
+        # Loops on blank input rather than caching it -- an empty code
+        # produces a URL like /sessions//round/current/image, which
+        # doesn't match the route at all (a generic framework 404, not
+        # one of this module's own error messages), so the
+        # session_not_found auto-reset in _handle_error never even
+        # gets a chance to fire. Caught 2026-11-13 after exactly this
+        # happened live.
+        entered = ""
+        while not entered:
+            entered = input("Enter the session code: ").strip()
+        _session_code = entered
         # Echoed back as a real printed line, not just input()'s own
         # transient prompt -- this becomes part of the cell's saved
         # output, so a student can scroll up and check it later (or
@@ -78,6 +88,17 @@ def _handle_error(resp: "requests.Response") -> str:
         if detail.get("error") == "session_not_found":
             _session_code = None
         return detail.get("message", "Something went wrong.")
+
+    # Defense in depth: a bare "Not Found" is FastAPI/Starlette's own
+    # generic response for a URL that didn't match ANY route -- never
+    # one of this service's own messages (those are always more
+    # specific strings, or the structured dict above). That shape of
+    # failure most likely means the session code itself was empty or
+    # otherwise malformed when the URL was built, so it's just as safe
+    # to reset here as for the explicit session_not_found marker.
+    if detail == "Not Found":
+        _session_code = None
+        return "Something was wrong with the session code -- try running this again."
     return detail
 
 
